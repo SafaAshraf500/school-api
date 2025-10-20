@@ -1,6 +1,4 @@
-const mongoose= require("mongoose")
-
-
+const mongoose = require("mongoose");
 const enrollmentSchema = new mongoose.Schema({
     
     student: {
@@ -14,5 +12,4 @@ const enrollmentSchema = new mongoose.Schema({
 
 
 const enrollmentModel = mongoose.model('enrollment', enrollmentSchema)
-
-module.exports =enrollmentModel
+module.export =enrollmentModel

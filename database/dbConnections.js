@@ -1,6 +1,3 @@
-
-
-
 const mongoose = require('mongoose');
 const dbConnection = async () => {
     mongoose.connect('mongodb://127.0.0.1:27017/school').then(() => {
