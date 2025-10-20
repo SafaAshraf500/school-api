@@ -10,8 +10,6 @@ dist/
 build/
 logs/
 
-# Uploads (لا ترفع ملفات المستخدمين والملفات الكبيرة)
 uploads/
 
-# VSCode
 .vscode/
