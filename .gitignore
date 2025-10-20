@@ -1,0 +1,17 @@
+# Node
+node_modules/
+.env
+.DS_Store
+npm-debug.log
+yarn-error.log
+
+# Build / logs
+dist/
+build/
+logs/
+
+# Uploads (لا ترفع ملفات المستخدمين والملفات الكبيرة)
+uploads/
+
+# VSCode
+.vscode/
