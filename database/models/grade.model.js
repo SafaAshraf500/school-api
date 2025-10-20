@@ -1,4 +1,4 @@
-const { models } = require("mongoose")
+const mongoose = require("mongoose")
 
 
 const gradeSchema = new mongoose.Schema({
@@ -20,4 +20,4 @@ const gradeSchema = new mongoose.Schema({
 
 const gradeModel = mongoose.model('grade', gradeSchema)
 
-models.export =gradeModel
+module.exports =gradeModel
