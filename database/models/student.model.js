@@ -1,5 +1,4 @@
-const { models } = require("mongoose")
-
+const mongoose = require("mongoose");
 
 const studentSchema = new mongoose.Schema({
     user: {
@@ -13,4 +12,4 @@ const studentSchema = new mongoose.Schema({
 
 const studentModel = mongoose.model('student', studentSchema)
 
-models.export =studentModel
+module.exports =studentModel
