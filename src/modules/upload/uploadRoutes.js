@@ -9,7 +9,7 @@ const { uploadProfile, uploadDocument } = require("./uploadController");
 // إعداد التخزين
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    if (file.fieldname === "profile") cb(null, "uploads/profiles");
+    if (file.fieldname === "profile") cb(null, "uploads/profile");
     else cb(null, "uploads/documents");
   },
   filename: (req, file, cb) => {
