@@ -41,10 +41,13 @@ const getTeacherById = async (req, res, next) => {
 
 const updateTeacher = async (req, res, next) => {
     try {
-    let teacher = await teacherModel.findByIdAndUpdate(req.params.id,req.body,{new:true})
-    !teacher || res.json({message:'success', teacher});
+    const teacher = await teacherModel.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    if (!teacher) {
+        return res.status(404).json({ message: "teacher not found" });
+    }
+    res.status(200).json({ message: "success", teacher });
     } catch (err) {
-        next(err);
+    next(err);
     }
 };
 

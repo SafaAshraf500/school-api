@@ -48,8 +48,15 @@ const getStudentById = async (req, res, next) => {
 
 
 const updateStudent =  async(req,res,next)=>{
-    let student = await studentModel.findByIdAndUpdate(req.params.id,req.body,{new:true})
-    !student || res.json({message:'success', student})
+    try {
+    const student = await studentModel.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    if (!student) {
+        return res.status(404).json({ message: "student not found" });
+    }
+    res.status(200).json({ message: "success", student });
+    } catch (err) {
+    next(err);
+    }
 }
 
 const deleteStudent = async (req, res, next) => {

@@ -7,33 +7,33 @@ const teacherRouter = express.Router()
 
 
 teacherRouter.post(
-    '/student',
+    '/',
     authMiddleware,
     allowRoles('admin'),
     addTeacher
 )
 
 teacherRouter.get(
-    '/student',
+    '/',
     authMiddleware,
     allowRoles('admin'),
     getTeachers
 )
 
 teacherRouter.get(
-    '/students/:id',
+    '/:id',
     authMiddleware,
     allowRoles('admin'),
     getTeacherById
 )
 teacherRouter.put(
-    '/students/:id',
+    '/:id',
     authMiddleware,
     allowRoles('admin'),
     updateTeacher
 )
 teacherRouter.delete(
-    '/students/:id',
+    '/:id',
     authMiddleware,
     allowRoles('admin'),
     deleteTeacher

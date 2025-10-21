@@ -5,7 +5,8 @@ const courseSchema = new mongoose.Schema({
     code: { type: String, unique: true },
     description: String,
     teacher: {
-        type: mongoose.Types.objectId,ref:'teacher'
+        type: mongoose.Types.ObjectId,
+        ref: "teacher",
     },
     maxStudents :Number
 }, { timestamps: true })
@@ -13,4 +14,4 @@ const courseSchema = new mongoose.Schema({
 
 const courseModel = mongoose.model('course', courseSchema)
 
-module.export =courseModel
+module.exports = courseModel

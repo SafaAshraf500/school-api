@@ -9,6 +9,7 @@ const userRoutes = require("./src/modules/user/userRoutes");
 const authRoutes = require("./src/modules/auth/authRoutes.js");
 const studentRouter = require("./src/modules/student/student.routes.js");
 const teacherRouter = require("./src/modules/teacher/teacher.routes.js");
+const courseRouter = require("./src/modules/course/course.routes.js");
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -23,6 +24,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/student", studentRouter);
 app.use("/api/teacher", teacherRouter);
+app.use("/api/coursers", courseRouter);
 
 app.use(globalError);
 
