@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const teacherSchema = new mongoose.Schema({
     user: {
         type: mongoose.Types.ObjectId,
-        ref:'user'
+        ref:'User'
     },
     subject: String,
     Phone:String

@@ -1,15 +1,20 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
+
 const enrollmentSchema = new mongoose.Schema({
-    
-    student: {
-        type: mongoose.Types.objectId,ref:'Student'
-    },
-      course: {
-        type: mongoose.Types.objectId,ref:'Course'
-    },
-    enrolledAt: Date
-}, { timestamps: true })
+  student: {
+    type: mongoose.Schema.Types.ObjectId, // must be a valid type
+    ref: 'Student',
+    required: true
+  },
+  course: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Course',
+    required: true
+  },
+  enrollmentDate: {
+    type: Date,
+    default: Date.now
+  }
+});
 
-
-const enrollmentModel = mongoose.model('enrollment', enrollmentSchema)
-module.export =enrollmentModel
+module.exports = mongoose.model('Enrollment', enrollmentSchema);

@@ -12,5 +12,5 @@ function roleMiddleware(allowedRoles = []) {
     next();
   };
 }
+module.exports = { roleMiddleware };
 
-module.exports = roleMiddleware;

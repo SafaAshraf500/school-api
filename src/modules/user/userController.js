@@ -1,9 +1,9 @@
-const User = require("../../../database/models/user.model");
+const userModel = require("../../../database/models/user.model");
 
 // Get current user
 exports.getProfile = async (req, res, next) => {
   try {
-    const user = await User.findById(req.user.userId).select("-password");
+    const user = await userModel.findById(req.user.userId).select("-password");
     if (!user) return res.status(404).json({ message: "User not found" });
 
     res.json(user);
@@ -19,7 +19,7 @@ exports.updateProfile = async (req, res, next) => {
     if (req.body.name) updates.name = req.body.name;
     if (req.file) updates.profilePicture = `/uploads/${req.file.filename}`;
 
-    const user = await User.findByIdAndUpdate(req.user.userId, updates, {
+    const user = await userModel.findByIdAndUpdate(req.user.userId, updates, {
       new: true,
       select: "-password",
     });
