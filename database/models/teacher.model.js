@@ -1,4 +1,4 @@
-const { models } = require("mongoose")
+const mongoose = require("mongoose")
 
 
 const teacherSchema = new mongoose.Schema({
@@ -13,4 +13,5 @@ const teacherSchema = new mongoose.Schema({
 
 const teacherModel = mongoose.model('teacher', teacherSchema)
 
-models.export =teacherModel
+module.exports =teacherModel
+module.exports =teacherModel
